@@ -19,6 +19,8 @@ class User extends Authenticatable
     const USUARIO_VERIFICADO = '1';
     const USUARIO_NO_VERIFICADO = '0';
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -63,7 +65,7 @@ class User extends Authenticatable
         return $this->admin == User::USUARIO_ADMINISTRADOR;
     }
 
-    public function generarVerificationToken()
+    public static function generarVerificationToken()
     {
         return Str::random(40);
     }
