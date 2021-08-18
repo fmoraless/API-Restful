@@ -10,3 +10,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+*.xml
+.vagrant/machines/api-restful/virtualbox/action_provision
+.vagrant/machines/api-restful/virtualbox/action_set_name
+.vagrant/machines/api-restful/virtualbox/id
+.vagrant/machines/api-restful/virtualbox/index_uuid
+.vagrant/machines/api-restful/virtualbox/private_key
