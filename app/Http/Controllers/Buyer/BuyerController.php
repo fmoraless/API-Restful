@@ -6,7 +6,7 @@ use App\Buyer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BuyerController extends Controller
+class BuyerController extends ApiController
 {
     /**
      * Display a listing of the resource.
