@@ -16,3 +16,6 @@ yarn-error.log
 .vagrant/machines/api-restful/virtualbox/id
 .vagrant/machines/api-restful/virtualbox/index_uuid
 .vagrant/machines/api-restful/virtualbox/private_key
+.vagrant/machines/api-restful/virtualbox/action_set_name
+/.vagrant/
+.vagrant/machines/api-restful/virtualbox/action_set_name
