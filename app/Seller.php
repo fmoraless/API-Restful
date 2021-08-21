@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Scopes\SellerScope;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Seller extends User
 {
