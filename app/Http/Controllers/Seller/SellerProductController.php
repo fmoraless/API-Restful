@@ -8,6 +8,7 @@ use App\Product;
 use App\Seller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class SellerProductController extends ApiController
@@ -44,7 +45,7 @@ class SellerProductController extends ApiController
         $data = $request->all();
 
         $data['status'] = Product::PRODUCTO_NO_DISPONIBLE;
-        $data['image'] = '1.jpg';
+        $data['image'] = $request->image->store('');
         $data['seller_id'] = $seller->id;
 
         $product = Product::create($data);
@@ -70,7 +71,7 @@ class SellerProductController extends ApiController
 
         $this->validate($request, $rules);
 
-        $this->verificarVendedor($seller);
+        $this->verificarVendedor($seller, $product);
 
         $product->fill($request->only([
             'name',
@@ -85,6 +86,12 @@ class SellerProductController extends ApiController
                 return $this->errorResponse('Un producto activo debe tener al menos una categoría.',
                 409);
             }
+        }
+
+        if ($request->hasFile('image')){
+            Storage::delete($product->image);
+
+            $product->image = $request->image->store('');
         }
 
         if ($product->isClean()) {
@@ -107,6 +114,8 @@ class SellerProductController extends ApiController
     {
         $this->verificarVendedor($seller, $product);
 
+        Storage::delete($product->image);
+
         $product->delete();
 
         return $this->showOne($product);
@@ -114,6 +123,7 @@ class SellerProductController extends ApiController
 
     public function verificarVendedor(Seller $seller, Product $product)
     {
+        //dd($seller);
         if($seller->id != $product->seller_id) {
             throw new HttpException(422, 'Error Processing Request');
 
