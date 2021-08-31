@@ -23,3 +23,4 @@ yarn-error.log
 /.vagrant/
 /.idea
 .vagrant/machines/api-restful/virtualbox/action_set_name
+.vagrant/machines/api-restful/virtualbox/action_set_name
