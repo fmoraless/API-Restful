@@ -1,10 +1,9 @@
-{{ route('verify', $user->verification_token) }}
 @component('mail::message')
     # Hola {{ $user->name }}
 
-    Gracias por crear una cuenta. y por seguirme en tik Tok .. jejej..<br>
+    Has cambiado tu correo electronico.<br>
 
-    Por favor verifica tu cuenta desde el siguiente botón:
+    Por favor verifica la nueva dirección desde el siguiente botón:
 
     @component('mail::button', ['url' => route('verify', $user->verification_token) ])
         Confirmar mi cuenta

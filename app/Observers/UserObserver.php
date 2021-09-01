@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Mail\UserCreated;
+use App\Mail\UserMailChanged;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,7 +17,9 @@ class UserObserver
      */
     public function created(User $user)
     {
-        Mail::to($user)->send(new UserCreated($user));
+        retry(5, function() use ($user) {
+                Mail::to($user)->send(new UserCreated($user));
+            }, 100);
     }
 
     /**
@@ -27,7 +30,11 @@ class UserObserver
      */
     public function updated(User $user)
     {
-        //
+        if ($user->isDirty('email')) {
+            retry(5, function() use ($user) {
+                Mail::to($user)->send(new UserMailChanged($user));
+            }, 100);
+        }
     }
 
     /**
