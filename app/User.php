@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Transformers\UserTransformer;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -19,6 +20,8 @@ class User extends Authenticatable
     const USUARIO_REGULAR = 'false';
     const USUARIO_VERIFICADO = '1';
     const USUARIO_NO_VERIFICADO = '0';
+
+    public $transformer = UserTransformer::class;
 
     protected $table = 'users';
     protected $dates = ['deleted_at'];

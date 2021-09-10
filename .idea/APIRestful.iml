@@ -115,6 +115,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/fractal" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-fractal" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/fractalistic" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
