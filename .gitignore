@@ -27,3 +27,4 @@ yarn-error.log
 .idea/APIRestful.iml
 .vagrant/machines/api-restful/virtualbox/action_set_name
 .idea/php.xml
+.vagrant/machines/api-restful/virtualbox/action_set_name
