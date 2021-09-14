@@ -29,3 +29,4 @@ yarn-error.log
 .idea/php.xml
 .vagrant/machines/api-restful/virtualbox/action_set_name
 .vagrant/machines/api-restful/virtualbox/action_set_name
+.vagrant/machines/api-restful/virtualbox/action_set_name
