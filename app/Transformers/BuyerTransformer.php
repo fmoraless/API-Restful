@@ -53,7 +53,6 @@ class BuyerTransformer extends TransformerAbstract
                 'href' => route('buyers.products.index', $buyer->id)
             ],
 
-            /// VALIDACIONES -- 158
         ];
     }
 
